@@ -97,10 +97,85 @@ function reverseString(str) {
     var i;
     var newString='';
           for (i = 0; i < str.length; i++) { 
-            newString = newString+str.substring(i, 1);
-            console.log(str.substring(i, 1));
+            newString = str.slice(i, i+1)+newString;
           }
-  return newString;
+    return newString;
 }
 
 reverseString('hello')
+
+// recursive O notation is O(n)
+// iterative is also linear
+
+/*=================================================================================
+Exercise 4 - Triangular Number
+Calculates the nth triangular number.
+A triangular number counts the objects that can form an equilateral triangle. 
+The nth triangular number is the number of dots composing a triangle with n dots on a side, 
+and is equal to the sum of the n natural numbers from 1 to n. 
+This is the Triangular Number Sequence: 1, 3, 6, 10, 15, 21, 28, 36, 45
+                          *
+            *           *    *
+*     |   *   *  |   *    *    *  |
+ 1st     2nd             3rd             nth?  
+1st trianular number = 1
+2nd = (1+2) = 3
+3rd = (1+2+3) = 6 
+5th = (1+2+3+4+5) = 15
+Input: 5
+Output: 15
+*/
+//Should always return n*(n+1)/2
+function triangle(n) {
+  var i;
+  let result =0;
+          for (i = 1; i <=n; i++) { 
+            result = result + i;
+          }
+  return result;
+}
+
+triangle(5)
+// recursive O notation is O(n)
+// iterative is also linear
+
+/*=================================================================================
+Exercise 5 - String Splitter
+Split a string based upon a separator (similar to String.prototype.split).
+Input: '1/21/2018'
+Output: 1212018 OR ["1", "21", "2018"]
+*/
+function split(str, sep) {
+    var i;
+    var newString='';
+          for (i = 0; i < str.length; i++) { 
+            if (str[i] !== sep)
+            {
+              newString += str[i];
+            }
+          }
+    return newString;
+}
+
+split('1/21/2018', '/')
+
+// recursive O notation is O(n)
+// iterative is also linear
+
+/*=================================================================================
+Exercise 6 - Factorial
+Write a recursive program that finds the factorial of a given number. 
+The factorial of a number can be found by multiplying that number by each number 
+between itself and one. The factorial of 5 is equal to 5 * 4 * 3 * 2 * 1 = 120
+Input: 5
+Output: 120
+*/
+function factorial(n) {  
+    // Base Case - when n is equal to 0, we stop the recursion
+    if (n === 0) {
+      return 1;
+    }
+    // This is our Recursive Case
+    // It will run for all other conditions except when n is equal to 0
+    return n * factorial(n - 1);
+  }
