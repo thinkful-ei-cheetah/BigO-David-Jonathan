@@ -34,3 +34,10 @@ function TOH(n, src, dest, temp) {
 }
 
 TOH(5, "A", "C", "B");
+
+// 3 discs on tower A, 2 discs on tower C
+
+// with 3 disks:7 4:15 5:31
+
+// (O(2 ^ n))
+
