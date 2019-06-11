@@ -41,3 +41,45 @@ TOH(5, "A", "C", "B");
 
 // (O(2 ^ n))
 
+
+
+function countSheep(num){
+    //stopping condition of base case
+  var i;
+  for (i = num; i > -1; i--) { 
+    if (i===0)
+    {
+       console.log(`All sheep jumped over the fence`);
+    } else
+    {
+       console.log(`${num}: Another sheep jump over the fence`);
+    }
+  }
+}
+
+// recursive O notation is O(n)
+// iterative is also linear
+
+
+/*===========================================================================
+2. Write a function called `powerCalculator()` that takes two parameters, an integer as a base, and another integer as an exponent. The function returns the value of the base raised to the power of the exponent. Use only exponents greater than or equal to 0 (positive numbers)
+* `powerCalculatorRec(10,2)`  should return `100`
+* `powerCalculatorRec(10,-2)`  should return `exponent should be >= 0`
+*/
+
+const powerCalculatorRec = function(base, exponent){
+    if(exponent < 0){
+        return 'exponent should be >= 0';
+    }
+    else {
+         var i;
+          for (i = 1; i < exponent; i++) { 
+            base=base*base;
+          }
+        }
+    return base;
+  
+}
+
+// recursive O notation is O(n)
+// iterative is also linear
