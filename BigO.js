@@ -83,3 +83,24 @@ const powerCalculatorRec = function(base, exponent){
 
 // recursive O notation is O(n)
 // iterative is also linear
+
+
+/*=================================================================================
+Exercise 3 - Reverse String
+Write a program that reverses a string. Take a string as input, 
+reverse the string, and return the new string.
+Input: 'tauhida'
+Output: adihuat
+*/
+
+function reverseString(str) {
+    var i;
+    var newString='';
+          for (i = 0; i < str.length; i++) { 
+            newString = newString+str.substring(i, 1);
+            console.log(str.substring(i, 1));
+          }
+  return newString;
+}
+
+reverseString('hello')
