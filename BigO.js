@@ -21,3 +21,16 @@
 // 9. O(1)
 
 // 10. O(n) prime number checker
+
+//11.
+function TOH(n, src, dest, temp) {
+  if (n >= 1) {
+    TOH(n - 1, src, temp, dest);
+    console.log('Move disk from Tower ', src, ' to Tower ', dest);
+    TOH(n - 1, temp, dest, src);
+  }
+
+  return;
+}
+
+TOH(5, "A", "C", "B");
