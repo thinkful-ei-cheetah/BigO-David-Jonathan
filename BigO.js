@@ -159,23 +159,48 @@ function split(str, sep) {
 
 split('1/21/2018', '/')
 
+
+
+function fib(num) {
+    let result = [];
+    for (let i = 1; i <= num; i++) {
+
+        if (i === 1) {
+            result.push(1);
+        }
+        else if (i == 2) {
+            result.push(1);
+        }
+        else {
+            result.push(result[i - 2] + result[i - 3]);
+        }
+    }
+    return result;
+}
+
+fib(7)
+
 // recursive O notation is O(n)
 // iterative is also linear
 
 /*=================================================================================
-Exercise 6 - Factorial
+Exercise 7 - Factorial
 Write a recursive program that finds the factorial of a given number. 
 The factorial of a number can be found by multiplying that number by each number 
 between itself and one. The factorial of 5 is equal to 5 * 4 * 3 * 2 * 1 = 120
 Input: 5
 Output: 120
 */
-function factorial(n) {  
-    // Base Case - when n is equal to 0, we stop the recursion
-    if (n === 0) {
-      return 1;
-    }
-    // This is our Recursive Case
-    // It will run for all other conditions except when n is equal to 0
-    return n * factorial(n - 1);
+function factorial(num){
+let result = 1;
+
+  for (let x = 1; x <= num; x++){
+    result *= x;
   }
+  return result;
+}
+
+factorial(4)
+
+// recursive O notation is O(n)
+// iterative is also linear
